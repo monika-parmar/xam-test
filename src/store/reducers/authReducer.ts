@@ -3,7 +3,7 @@ import { saveAuthUserNameToLocalStorage } from "../../helpers/localstoragehelper
 import { AUTH_REDUX_CONSTANTS } from "../reduxConstants/authReduxConstants";
 
 interface authReducerProps {
-  branchId: number | undefined;
+  branchId: string;
   userName: string;
   password: string;
   error: string | undefined;
@@ -11,7 +11,7 @@ interface authReducerProps {
 }
 
 const initialAuthReducer: authReducerProps = {
-  branchId: undefined,
+  branchId: "",
   userName: "",
   password: "",
   error: undefined,
