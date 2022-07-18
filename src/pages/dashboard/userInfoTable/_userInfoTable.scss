@@ -1,0 +1,20 @@
+.user-info-table-container {
+  flex: 1;
+
+  table,
+  th,
+  td {
+    padding: 5px 10px;
+    text-align: left;
+    border: 1px solid $active-color;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+
+    * {
+      font-size: 0.75rem;
+    }
+  }
+}
