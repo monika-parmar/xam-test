@@ -1,0 +1,27 @@
+@import "styles/color-palette";
+@import "styles/components";
+@import "styles/pages";
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family:"Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  * {
+    box-sizing: border-box;
+  }
+
+  #root {
+    height: 100%;
+  }
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
