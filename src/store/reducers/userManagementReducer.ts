@@ -1,11 +1,10 @@
-import { stat } from "fs";
 import { users } from "../../assets/data/users_data";
 import { USER_MANAGEMENT_REDUX_CONSTANTS } from "../reduxConstants/userManagementsReduxConstants";
 
 const initialUserManagementReducer = {
   users,
   newUserDetails: {
-    branchId: undefined,
+    branchId: "",
     userName: "",
     password: "",
     firstName: "",
@@ -38,7 +37,7 @@ export const userManagementReducer = (
     case USER_MANAGEMENT_REDUX_CONSTANTS.ON_RESET_USER_DETAIL_FORM:
       return {
         ...state,
-        newUserDetails: {},
+        newUserDetails: initialUserManagementReducer.newUserDetails,
       };
 
     case USER_MANAGEMENT_REDUX_CONSTANTS.ON_ADD_USER_DETAIL_FORM:
@@ -50,10 +49,10 @@ export const userManagementReducer = (
     case USER_MANAGEMENT_REDUX_CONSTANTS.ON_DELETE_USER_RECORD:
       let updatedUserList = state.users;
       const { index } = action.data;
-      updatedUserList = updatedUserList.splice(index, 1);
+      updatedUserList.splice(index, 1);
       return {
         ...state,
-        users: updatedUserList,
+        users: [...updatedUserList],
       };
 
     default:
