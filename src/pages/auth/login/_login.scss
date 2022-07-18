@@ -1,0 +1,28 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    min-height: 280px;
+    padding: 20px;
+    border: 1px solid $active-color;
+
+    > * {
+      width: 250px;
+      margin-top: 10px;
+    }
+  }
+}
+
+
+.login-error-message {
+  padding: 10px 6px;
+  font-size: .75rem;
+  font-weight: 600;
+  color: $error-color;
+  background-color: $light-error-color;
+}
