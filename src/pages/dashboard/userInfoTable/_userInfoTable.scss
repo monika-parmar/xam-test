@@ -13,6 +13,13 @@
     width: 100%;
     border-collapse: collapse;
 
+td > div {
+  max-width: 150px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
     * {
       font-size: 0.75rem;
     }
