@@ -25,7 +25,7 @@ const UserDetailForm: FC = () => {
       userManagementReducer ?? {}
   );
   const onUserDetailFormReset = () => {
-    dispatch(onResetUserDetailFormAction());
+    dispatch(onResetUserDetailFormAction());   
   };
 
   const onUserDetailAdd = () => {
@@ -47,7 +47,7 @@ const UserDetailForm: FC = () => {
     }
     if (isFormValidated) {
       setIsFormSubmitted(false);
-      dispatch(onAddUserDetailFormAction(newUserDetails));
+      dispatch(onAddUserDetailFormAction({...newUserDetails, branchId: parseInt(newUserDetails.branchId)}));
     }
   };
 
@@ -57,6 +57,7 @@ const UserDetailForm: FC = () => {
         <div>
           <Input
             key={index}
+            type={field?.type ?? 'text'}
             placeholder={field.placeholder}
             value={newUserDetails?.[field?.name]}
             onChange={(e) =>
