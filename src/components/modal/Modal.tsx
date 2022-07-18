@@ -32,10 +32,10 @@ const Modal = (props: ModalProps) => {
     hideModal,
     ...restProps
   } = props;
-  const dialogContentClass = `modal-content ${className}`;
-  const dialogHeaderClass = `modal-header ${headerClassName}`;
-  const dialogBodyClass = `modal-body ${bodyClassName}`;
-  const dialogFooterClass = `modal-footer ${footerClassName}`;
+  const dialogContentClass = `modal-content ${className ?? ''}`;
+  const dialogHeaderClass = `modal-header ${headerClassName ?? ''}`;
+  const dialogBodyClass = `modal-body ${bodyClassName ?? ''}`;
+  const dialogFooterClass = `modal-footer ${footerClassName ?? ''}`;
 
   return (
     <div className="modal">
