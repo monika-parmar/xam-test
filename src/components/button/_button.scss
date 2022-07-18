@@ -1,0 +1,18 @@
+button {
+    outline: none;
+    cursor: pointer;
+}
+
+.button {
+    min-width: 100px;
+    padding: 8px 10px;
+    font-size: .875rem;
+    font-weight: 600;
+    border-radius: 6px;
+    border: none;
+}
+
+.primary-button {
+    color: $active-color;
+    background-color: $primary-color;
+}
