@@ -15,7 +15,7 @@ const Login: FC = () => {
   };
 
   const onLoginClick = async () => {
-   await dispatch(onLoginClickAction({branchId, userName, password}));
+   await dispatch(onLoginClickAction({branchId: parseInt(branchId), userName, password}));
   };
 
   return (
