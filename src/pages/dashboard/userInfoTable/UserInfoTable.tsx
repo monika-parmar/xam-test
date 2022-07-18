@@ -43,16 +43,18 @@ const deleteModalButton: ButtonType[] = [
                 <th>Position</th>
                 <th>Action</th>
             </thead>
+            <tbody>
             {users.map((user: UserType, index: number) =>
             <tr>
-                <td>{index +  1}</td>
-                <td>{user.branchId}</td>
-                <td>{user.userName}</td>
-                <td>{user.firstName} {user.middleName}  {user.lastName}</td>
-                <td>{user.position}</td>
+                <td><div>{index +  1}</div></td>
+                <td><div>{user.branchId}</div></td>
+                <td><div>{user.userName}</div></td>
+                <td><div>{user.firstName} {user.middleName} {user.lastName}</div></td>
+                <td><div>{user.position}</div></td>
                 <td><button onClick={() => onClickRemove(index)}>REMOVE</button></td>
             </tr>)             
         }
+        </tbody>
         </table> :
         <div className="no-record-found">No user found</div>}
          {recordForDeletion >= 0 && (
