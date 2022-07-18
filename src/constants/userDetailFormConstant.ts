@@ -2,7 +2,7 @@ export const userDetailFormConstant = [
     {
     name: "branchId",
     placeholder: "Branch Id",
-},
+    },
 {
     name: "userName",
     placeholder: "User Name",
@@ -26,5 +26,6 @@ export const userDetailFormConstant = [
 {
     name: "password",
     placeholder: "Password",
+    type: 'password'
 },
 ]
