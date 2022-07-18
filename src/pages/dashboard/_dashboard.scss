@@ -1,0 +1,36 @@
+.dashboard {
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    background-color: $background-color;
+}
+
+.dashboard-container {
+    height: 100%;
+    background-color: $secondary-color;
+    border-radius: 10px;
+}
+
+.dashboard-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.logged-in-user-name {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.logout-button {
+    min-width: fit-content;
+    padding: 10px 14px;
+    font-size: 1rem;
+}
+
+.dashboard-content-container {
+    display: flex;
+    padding: 20px 40px;
+    gap: 20px;
+}
