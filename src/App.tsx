@@ -18,12 +18,17 @@ const App = () => {
   useEffect(() => {
     dispatch(loadExistingUsersAction());
   
-      const cb = () => {
+      const cb = () => {       
           dispatch({
             type: AUTH_REDUX_CONSTANTS.CHANGE_AUTH_STATUS,
-            status: getAuthUserNameFromLocalStorage() ? true :false,
+            data: {isAuthorised: getAuthUserNameFromLocalStorage() ? true :false},
           });
       };
+      if(getAuthUserNameFromLocalStorage()) {
+        console.log('dfkjhsdjfh');
+       cb();
+      }
+      
       window.addEventListener('storage', cb);
   
       return () => {
