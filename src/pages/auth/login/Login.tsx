@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, SyntheticEvent } from "react";
 import Button from "../../../components/button/Button";
 import Input from "../../../components/input/Input";
 import { useAppDispatch, useAppSelector } from "../../../hooks/hooks";
@@ -19,6 +19,12 @@ const Login: FC = () => {
    await dispatch(onLoginClickAction({branchId: parseInt(branchId), userName, password}));
   };
 
+  const onEnterKeyUp = (event: any) => {
+    if (event.key === 'Enter') {
+      onLoginClick();
+    }
+  };
+
   return (
     <div className="login-container">
       <div data-testid={LOGIN_PAGE_TEST_CONSTANTS.loginForm}>
@@ -28,12 +34,14 @@ const Login: FC = () => {
          data-testid={LOGIN_PAGE_TEST_CONSTANTS.branchIdInput}
           type="text"
           placeholder="Branch id"
+          onKeyUp={onEnterKeyUp}
           onChange={(e) => onInputValueChange("branchId", e.target.value)}
           value={branchId}
         />
         <Input
          data-testid={LOGIN_PAGE_TEST_CONSTANTS.userNameInput}
           type="text"
+          onKeyUp={onEnterKeyUp}
           placeholder="User name"
           onChange={(e) => onInputValueChange("userName", e.target.value)}
           value={userName}
@@ -41,6 +49,7 @@ const Login: FC = () => {
         <Input
          data-testid={LOGIN_PAGE_TEST_CONSTANTS.passwordInput}
           type="password"
+          onKeyUp={onEnterKeyUp}
           placeholder="Password"
           onChange={(e) => onInputValueChange("password", e.target.value)}
           value={password}
