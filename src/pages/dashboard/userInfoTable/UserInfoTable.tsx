@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { UserType } from "../../../assets/data/users_data";
 import Modal, { ButtonType } from "../../../components/modal/Modal";
+import { getAuthUserNameFromLocalStorage } from "../../../helpers/localstoragehelper";
 import { useAppDispatch, useAppSelector } from "../../../hooks/hooks";
 import { onDeleteUserRecordAction } from "../../../store/actions/userManagementActions";
 
@@ -18,6 +19,14 @@ const onClickDeleteConfirmation = () => {
 dispatch(onDeleteUserRecordAction(recordForDeletion))
 }
 
+const alertModalButton: ButtonType[] = [
+  {
+    title: 'Okay',
+    onClick: () => setRecordForDeletion(-1),
+    color: 'primary',
+  },
+]
+
 const deleteModalButton: ButtonType[] = [
     {
       title: 'Cancel',
@@ -33,8 +42,8 @@ const deleteModalButton: ButtonType[] = [
     },
   ];
     return(<div className="user-info-table-container">
-
-        {users?.length ? <table>
+        {users?.length && (
+        <table>
             <thead>
                 <th>#</th>
                 <th>Branch ID</th>
@@ -46,24 +55,23 @@ const deleteModalButton: ButtonType[] = [
             <tbody>
             {users.map((user: UserType, index: number) =>
             <tr>
-                <td><div>{index +  1}</div></td>
-                <td><div>{user.branchId}</div></td>
-                <td><div>{user.userName}</div></td>
-                <td><div>{user.firstName} {user.middleName} {user.lastName}</div></td>
-                <td><div>{user.position}</div></td>
+                <td>{index +  1}</td>
+                <td>{user.branchId}</td>
+                <td>{user.userName}</td>
+                <td>{user.firstName} {user.middleName} {user.lastName}</td>
+                <td>{user.position}</td>
                 <td><button onClick={() => onClickRemove(index)}>REMOVE</button></td>
             </tr>)             
         }
         </tbody>
-        </table> :
-        <div className="no-record-found">No user found</div>}
+        </table>) }
          {recordForDeletion >= 0 && (
         <Modal
-          header="Delete User"
-          buttons={deleteModalButton}
+          header={users[recordForDeletion].userName === getAuthUserNameFromLocalStorage() ? 'Cannot delete this user' : 'Delete User'}
+          buttons={users[recordForDeletion].userName === getAuthUserNameFromLocalStorage() ? alertModalButton : deleteModalButton}
           hideModal={() => setRecordForDeletion(-1)}
         >
-            Are you sure you want to delete?
+            {users[recordForDeletion].userName === getAuthUserNameFromLocalStorage() ? 'Logged in user cannot be deleted' :'Are you sure you want to delete?'}
         </Modal>
       )}
     </div>)
