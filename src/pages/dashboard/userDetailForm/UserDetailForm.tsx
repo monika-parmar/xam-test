@@ -47,7 +47,7 @@ const UserDetailForm: FC = () => {
     }
     if (isFormValidated) {
       setIsFormSubmitted(false);
-      dispatch(onAddUserDetailFormAction({...newUserDetails, branchId: parseInt(newUserDetails.branchId)}));
+      dispatch(onAddUserDetailFormAction({...newUserDetails, branchId: newUserDetails.branchId}));
     }
   };
 

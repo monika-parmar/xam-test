@@ -21,14 +21,10 @@ export const setLoggedInUserNameAction = (userName: string) => {
 
 export const onLoginClickAction = (data: Record<string, string | number | (() => void)>) => {
     return (dispatch: AppDispatch) => {
-        try {
             dispatch({
                 type: AUTH_REDUX_CONSTANTS.CHECK_CREDENTIALS,
                 data
             })
-        } catch(e) {
-            /* error */
-        }
     }
 }
 

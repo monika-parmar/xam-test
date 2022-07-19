@@ -71,6 +71,12 @@ export const authReducer = (
         } else if (password !== existingUser.password) {
           errorMessage = "Password is incorrect";
         }
+      } else if(!branchId?.toString()?.trim()?.length) {
+        errorMessage = "Please enter branch id"
+      } else if(!userName.toString().trim().length) {
+        errorMessage = "Please enter username"
+      } else if(!password.toString().trim().length) {
+        errorMessage = "Please enter password"
       } else {
         errorMessage = "No user with provided branch id exist";
       }
