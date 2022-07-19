@@ -25,3 +25,34 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+// /* scrollbar starts here */
+* {
+  scrollbar-color: $primary-color $secondary-color;
+  // scrollbar-width: thin;
+}
+
+/* width */
+::-webkit-scrollbar {
+  height: 7px;
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $primary-color;
+  border-radius: 7px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: darkgray;
+}
+
+// /* scrollbar ends here */
