@@ -14,8 +14,11 @@ const Dashboard: FC = () => {
   const onClickLogoutButton = () => {
     dispatch({
       type: AUTH_REDUX_CONSTANTS.CHANGE_AUTH_STATUS,
-      isAuthorised: false,
+      data: {isAuthorised: false},
     });
+    dispatch({
+      type: AUTH_REDUX_CONSTANTS.LOGOUT_USER_ACTION
+    })
   };
   return (
     <div className="dashboard">
