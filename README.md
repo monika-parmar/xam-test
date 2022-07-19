@@ -16,7 +16,6 @@
 
 - User can also remove any existing user by clicking on respective user's Remove action button. A confirmation modal will be displayed in order to take confirmation from the user, if he/ she's sure about deleting that record/ user. If user clicks on Yes button, that particular user will be deleted, therwise user can close the modal by clicking on Cancel button.
 
-# Project Detail ends here 
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
