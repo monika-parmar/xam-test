@@ -1,4 +1,4 @@
-# Project Detail (Functionality)
+# Project Details (Functionality)
 
 - This project has an authentication system for allowing user to log in with branch id, username and password
 
