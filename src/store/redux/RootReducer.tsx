@@ -12,6 +12,7 @@ const appReducer = combineReducers({
 const rootReducer = (state: any, action: any) => {
   if (action.type === AUTH_REDUX_CONSTANTS.LOGOUT_USER_ACTION) {
     clearAuthUserNameFromLocalStorage();
+   
     const emptyState: Record<string, any> = {};
     Object.keys(state).forEach((key) => {
       emptyState[key] = null;
