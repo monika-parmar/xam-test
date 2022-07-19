@@ -1,3 +1,22 @@
+# Project Detail starts here 
+
+- This project has an authentication system for allowing user to log in with branch id, username and password
+
+- Validations are given supporting authentication process
+
+- Once user will logged in, user can see a dashboard, where he/ she can see username attop-left side and logout button at top-right side.
+
+- By clicking on Logout button, user will be redirected to Login screen.
+
+- In dashboard content area, user can see existing users list at right side.
+
+- If user wants to add other user, he/ she can add by filling information in the form given at the left side.
+
+- By clicking on Add button, user will be added, and by clicking on the Reset button, all the data will be reset.
+
+- User can also remove any existing user by clicking on respective user's Remove action button. A confirmation modal will be displayed in order to take confirmation from the user, if he/ she's sure about deleting that record/ user. If user clicks on Yes button, that particular user will be deleted, therwise user can close the modal by clicking on Cancel button.
+
+# Project Detail ends here 
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
