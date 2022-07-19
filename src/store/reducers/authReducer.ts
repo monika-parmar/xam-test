@@ -30,10 +30,11 @@ export const authReducer = (
         [name]: value,
       };
 
-      case AUTH_REDUX_CONSTANTS.CHANGE_AUTH_STATUS:       
+      case AUTH_REDUX_CONSTANTS.CHANGE_AUTH_STATUS: 
+            const {isAuthorised} = action?.data;
         return {
             ...state,
-            isAuthorised: action?.data,
+            isAuthorised,
           };
 
     case AUTH_REDUX_CONSTANTS.CHECK_CREDENTIALS: {
